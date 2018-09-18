@@ -1,0 +1,48 @@
+    con23001{63477}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 388 bytes_i (7 pkts, 678s ago), 1440 bytes_o (12 pkts, 32s ago), rekeying in 31 minutes
+    con13001{62558}:  3DES_CBC/HMAC_SHA1_96/MODP_1024, 1319454 bytes_i (5328 pkts, 17698s ago), 1569160 bytes_o (6750 pkts, 55s ago), rekeying in 2 hours
+    con13000{62607}:  3DES_CBC/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 16849s ago), 0 bytes_o, rekeying in 3 hours
+     con5001{63465}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 90962 bytes_i (228 pkts, 865s ago), 63488 bytes_o (310 pkts, 21s ago), rekeying in 27 minutes
+     con5000{63478}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 4465013 bytes_i (6414 pkts, 672s ago), 1415696 bytes_o (7482 pkts, 5s ago), rekeying in 33 minutes
+    con27000{61996}:  AES_CBC_128/HMAC_SHA1_96, 1812337529 bytes_i (2490720 pkts, 28117s ago), 527783528 bytes_o (2793211 pkts, 0s ago), rekeying disabled
+    con19000{63399}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 2810750 bytes_i (37750 pkts, 2143s ago), 5114128 bytes_o (31638 pkts, 0s ago), rekeying in 12 minutes
+    con28001{63483}:  3DES_CBC/HMAC_SHA1_96/MODP_1024, 907 bytes_i (6 pkts, 587s ago), 1904 bytes_o (7 pkts, 570s ago), rekeying in 50 minutes
+    con22000{63470}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 756s ago), 2880 bytes_o (24 pkts, 5s ago), rekeying in 35 minutes
+    con21006{63505}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 132s ago), 600 bytes_o (5 pkts, 18s ago), rekeying in 43 minutes
+    con17003{63435}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1424s ago), 0 bytes_o, rekeying in 22 minutes
+    con17000{63441}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 6259843 bytes_i (114541 pkts, 532s ago), 18304024 bytes_o (152531 pkts, 529s ago), rekeying in 27 minutes
+    con17002{63444}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1274s ago), 0 bytes_o, rekeying in 23 minutes
+    con15000{63377}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 1854372 bytes_i (23124 pkts, 2503s ago), 4264640 bytes_o (26328 pkts, 0s ago), rekeying in 21 seconds
+     con1001{63173}:  AES_CBC_256/HMAC_SHA1_96, 4889071 bytes_i (60413 pkts, 6313s ago), 7467520 bytes_o (45484 pkts, 0s ago), rekeying disabled
+    con24002{63500}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 18897 bytes_i (87 pkts, 191s ago), 34784 bytes_o (120 pkts, 35s ago), rekeying in 42 minutes
+    con29000{63375}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 2518s ago), 0 bytes_o, rekeying in 2 minutes
+    con29007{63383}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 2448s ago), 0 bytes_o, rekeying in 2 minutes
+    con29001{63394}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 2214s ago), 0 bytes_o, rekeying in 7 minutes
+   con290012{63404}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 19900 bytes_i (143 pkts, 2016s ago), 20064 bytes_o (144 pkts, 168s ago), rekeying in 8 minutes
+    con29005{63409}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1896s ago), 0 bytes_o, rekeying in 12 minutes
+    con29004{63410}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1890s ago), 0 bytes_o, rekeying in 11 minutes
+    con29002{63417}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1710s ago), 0 bytes_o, rekeying in 14 minutes
+    con29009{63418}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1710s ago), 0 bytes_o, rekeying in 18 minutes
+   con290010{63432}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1445s ago), 0 bytes_o, rekeying in 24 minutes
+    con29006{63434}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1432s ago), 0 bytes_o, rekeying in 18 minutes
+   con290011{63462}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 902s ago), 0 bytes_o, rekeying in 27 minutes
+    con29003{63492}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 374s ago), 0 bytes_o, rekeying in 40 minutes
+    con29008{63501}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 186s ago), 0 bytes_o, rekeying in 38 minutes
+    con18000{63507}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 148578 bytes_i (1927 pkts, 108s ago), 259360 bytes_o (1600 pkts, 0s ago), rekeying in 42 minutes
+    con11000{63495}:  AES_CBC_128/HMAC_SHA1_96/MODP_1024, 6691594 bytes_i (7664 pkts, 283s ago), 1085520 bytes_o (6230 pkts, 0s ago), rekeying in 38 minutes
+     con4002{63428}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 55308856 bytes_i (230879 pkts, 1558s ago), 56646344 bytes_o (270819 pkts, 0s ago), rekeying in 17 minutes
+     con4000{63502}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 23514 bytes_i (176 pkts, 175s ago), 23968 bytes_o (176 pkts, 0s ago), rekeying in 39 minutes
+     con9001{63413}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 1806s ago), 0 bytes_o, rekeying in 14 minutes
+     con9000{63511}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 29559 bytes_i (70 pkts, 5s ago), 21504 bytes_o (90 pkts, 0s ago), rekeying in 43 minutes
+    con17001{63439}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 1457916 bytes_i (26690 pkts, 440s ago), 4269280 bytes_o (35602 pkts, 943s ago), rekeying in 21 minutes
+    con17001{63459}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 1428432 bytes_i (26152 pkts, 440s ago), 4184072 bytes_o (34883 pkts, 439s ago), rekeying in 28 minutes
+    con17000{63485}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 4762770 bytes_i (87187 pkts, 532s ago), 13930328 bytes_o (116115 pkts, 0s ago), rekeying in 38 minutes
+    con17001{63489}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 1462284 bytes_i (26774 pkts, 441s ago), 4283256 bytes_o (35721 pkts, 0s ago), rekeying in 35 minutes
+    con20007{62716}:  AES_CBC_256/HMAC_SHA1_96, 1360242 bytes_i (9116 pkts, 14775s ago), 1245864 bytes_o (9135 pkts, 13s ago), rekeying in 3 days
+    con20001{62718}:  AES_CBC_256/HMAC_SHA1_96, 279096 bytes_i (5118 pkts, 14771s ago), 810944 bytes_o (5516 pkts, 21s ago), rekeying in 3 days
+     con3002{63447}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 4650 bytes_i (48 pkts, 1229s ago), 10368 bytes_o (72 pkts, 711s ago), rekeying in 23 minutes
+     con3000{63467}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 3047918 bytes_i (37029 pkts, 836s ago), 8495344 bytes_o (46134 pkts, 0s ago), rekeying in 28 minutes
+    con14000{63365}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 800 bytes_i (16 pkts, 2723s ago), 2880 bytes_o (24 pkts, 25s ago), rekeying in 5 seconds
+    con14002{63393}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 2222s ago), 0 bytes_o (0 pkts, 2223s ago), rekeying in 6 minutes
+    con14003{63455}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 564788 bytes_i (8082 pkts, 1011s ago), 832808 bytes_o (5105 pkts, 0s ago), rekeying in 25 minutes
+    con14001{63458}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 0 bytes_i (0 pkts, 960s ago), 0 bytes_o (0 pkts, 961s ago), rekeying in 26 minutes
+     con2000{63369}:  AES_CBC_256/HMAC_SHA1_96/MODP_1024, 1226316 bytes_i (12541 pkts, 2s ago), 6159784 bytes_o (13893 pkts, 2s ago), rekeying in 5 minutes
