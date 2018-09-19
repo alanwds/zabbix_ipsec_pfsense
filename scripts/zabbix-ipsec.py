@@ -1,53 +1,46 @@
-#!/usr/bin/env python
-#For PF use /usr/local/bin/python2.7
+#!/usr/local/bin/python2.7
 
 import itertools
 import re
 import sys
-from xml.dom import minidom
-
-IPSEC_CONF = '/var/etc/ipsec/ipsec.conf'
-PFSENSE_CONF = 'config.xml'
-rtt_time_warn = 200
-rtt_time_error = 300
-
-import itertools
-import re
-import sys
-from xml.dom import minidom
+import xml.etree.cElementTree as ET
 
 IPSEC_CONF = '/var/etc/ipsec/ipsec.conf'
 PFSENSE_CONF = '/conf/config.xml'
 rtt_time_warn = 200
 rtt_time_error = 300
 
+#Parse the XML
+tree = ET.parse(PFSENSE_CONF)
+root = tree.getroot()
+
 #Function to find phase description by ikeid
-def findDescr(ikeid):
+def findDescr(remoteid,ikeid):
 
-	#Check if the parameter was sent
-	if not ikeid:
-		return "Not found"
-        #init a counter
-        counter = 0
-        #parse xml file
-        xmldoc = minidom.parse(PFSENSE_CONF)
-        #Get all elements and save as a dictionary
-        phase2list = xmldoc.getElementsByTagName('ipsec')
+        #Check if the parameter was sent
+        if not remoteid:
+                return "Not found"
 
-        #run the dic and find the description by ikeid
-        for node in phase2list:
-                #descrList=node.getElementsByTagName('descr')
-                ikeIdList=node.getElementsByTagName('ikeid')
-                for i in ikeIdList:
-                        #if not empty
-			size = len(i.childNodes[0].nodeValue)
-                        if size > 0:
-                                if i.childNodes[0].nodeValue == ikeid:
-                                        #print i.childNodes[0].nodeValue
-                                        #print node.getElementsByTagName('descr')[counter].firstChild.nodeValue 
-                                        return node.getElementsByTagName('descr')[counter].firstChild.nodeValue
-                                counter += 1
-        return notFound
+        #create search string. We use the "..." after the search to return the parent element of the current element.
+        #The reason for that is the remoteid is a sub element of phase2 element 
+        search = "./ipsec/phase2/remoteid/[address='" + remoteid + "']..."
+
+        for tunnel in root.findall(search):
+                descr = tunnel.find('descr').text
+
+                #If we have only one result, we are talking about the correct tunnel
+                if len(root.findall(search)) == 1:
+                        return descr
+
+                #otherwise, if we have more than 1, we have to confirm the remoteid and the ikeid 
+                #Case the ikeIds are the same, we got it. Case not, we pass and wait for next interation
+                else:
+                        #Get the ikeid of this element
+                        ikeidElement = tunnel.find('ikeid').text
+                        if ikeidElement == ikeid:
+                                return descr
+
+        return "Not found"
 
 #Function to set correct format on ikeId. Recives conIDXXX, return ID
 def formatIkeId(ikeid):
@@ -68,6 +61,7 @@ def parseConf():
     reg_conn = re.compile('^conn\s((?!%default).*)')
     reg_left = re.compile('.*leftid =(.*).*')
     reg_right = re.compile('.*rightid =(.*).*')
+    reg_rightsubnet = re.compile('.*rightsubnet =(.*).*')
     data = {}
     with open(IPSEC_CONF, 'r') as f:
         for key, group in itertools.groupby(f, lambda line: line.startswith('\n')):
@@ -76,8 +70,11 @@ def parseConf():
                 conn_tmp = [m.group(1) for l in conn_info for m in [reg_conn.search(l)] if m]
                 left_tmp = [m.group(1) for l in conn_info for m in [reg_left.search(l)] if m]
                 right_tmp = [m.group(1) for l in conn_info for m in [reg_right.search(l)] if m]
+                rightsubnet_tmp = [m.group(1) for l in conn_info for m in [reg_rightsubnet.search(l)] if m]
 		if len(conn_tmp) > 0 :
-			descr = findDescr(formatIkeId(conn_tmp))
+			rightsubnet_tmp = rightsubnet_tmp[0].lstrip() #remore spaces
+			rightsubnet_tmp = rightsubnet_tmp.split("/") #Split string to get only ip, without subnet mask)
+			descr = findDescr(rightsubnet_tmp[0],formatIkeId(conn_tmp))
 		else:
 			descr = "Not found"
                 if conn_tmp and left_tmp and right_tmp:
