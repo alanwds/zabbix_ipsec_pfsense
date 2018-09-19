@@ -1,4 +1,60 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_MYSQL_ZABBIX",
+      "label": "mysql_zabbix",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "mysql",
+      "pluginName": "MySQL"
+    },
+    {
+      "name": "DS_ZABBIX_PRD_API",
+      "label": "zabbix_prd_api",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "alexanderzobnin-zabbix-datasource",
+      "pluginName": "Zabbix"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "alexanderzobnin-zabbix-datasource",
+      "name": "Zabbix",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "alexanderzobnin-zabbix-triggers-panel",
+      "name": "Zabbix Triggers",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "5.1.4"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": "5.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "mysql",
+      "name": "MySQL",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": "5.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -15,7 +71,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 78,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -27,7 +83,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "mysql_zabbix",
+      "datasource": "${DS_MYSQL_ZABBIX}",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -79,7 +135,6 @@
       "tableColumn": "count(name)",
       "targets": [
         {
-          "$$hashKey": "object:199",
           "alias": "",
           "application": {
             "filter": "IPSec"
@@ -87,30 +142,34 @@
           "format": "table",
           "functions": [
             {
+              "added": false,
               "def": {
-                "name": "sum",
                 "category": "Aggregate",
+                "defaultParams": [
+                  "1m"
+                ],
+                "name": "sum",
                 "params": [
                   {
                     "name": "interval",
                     "type": "string"
                   }
-                ],
-                "defaultParams": [
-                  "1m"
                 ]
               },
               "params": [
                 "2m"
               ],
-              "text": "sum(2m)",
-              "added": false,
-              "$$hashKey": "object:6968"
+              "text": "sum(2m)"
             },
             {
+              "added": false,
               "def": {
-                "name": "groupBy",
                 "category": "Transform",
+                "defaultParams": [
+                  "1m",
+                  "avg"
+                ],
+                "name": "groupBy",
                 "params": [
                   {
                     "name": "interval",
@@ -118,7 +177,6 @@
                   },
                   {
                     "name": "function",
-                    "type": "string",
                     "options": [
                       "avg",
                       "min",
@@ -126,21 +184,16 @@
                       "sum",
                       "count",
                       "median"
-                    ]
+                    ],
+                    "type": "string"
                   }
-                ],
-                "defaultParams": [
-                  "1m",
-                  "avg"
                 ]
               },
               "params": [
                 "2m",
                 "median"
               ],
-              "text": "groupBy(2m, median)",
-              "added": false,
-              "$$hashKey": "object:6970"
+              "text": "groupBy(2m, median)"
             }
           ],
           "group": {
@@ -191,7 +244,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "zabbix_prd_api",
+      "datasource": "${DS_ZABBIX_PRD_API}",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -243,7 +296,6 @@
       "tableColumn": "Host group",
       "targets": [
         {
-          "$$hashKey": "object:9183",
           "application": {
             "filter": "IPSec"
           },
@@ -299,6 +351,7 @@
         "x": 0,
         "y": 3
       },
+      "highlightBackground": false,
       "highlightNewEvents": true,
       "highlightNewerThan": "1h",
       "hostField": true,
@@ -406,7 +459,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "zabbix_prd_api",
+      "datasource": "${DS_ZABBIX_PRD_API}",
       "fill": 1,
       "gridPos": {
         "h": 10,
@@ -512,7 +565,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "zabbix_prd_api",
+      "datasource": "${DS_ZABBIX_PRD_API}",
       "fill": 1,
       "gridPos": {
         "h": 10,
