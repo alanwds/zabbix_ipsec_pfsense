@@ -20,7 +20,7 @@ The template queries zabbix-ipsec.py for tunnels ids (conXXXX). After that, the 
 
 ### Installation
 
-- You have to put check_ipsec.sh and zabbix-ipsec.py on pfsense filesystem. (/usr/local/bin/ in this example)
+- You have to put check_ipsec.sh, check_ipsec_traffic.sh and zabbix-ipsec.py on pfsense filesystem. (/usr/local/bin/ in this example)
 - Install sudo pakage at pfsense packages manager
 - Copy file zabbix_sudoers under /usr/local/etc/sudoers.d
 - Enabled Custom Configuration on Advanced Settins at System -> sudo
@@ -41,8 +41,8 @@ chmod +x /usr/local/bin/check_ipsec_traffic.sh
 
 # To do
 
-- Create feature for ipsec tunnels traffic metrics
 - Create feature to check if there are communication between sites (ping, nc or something like that)
+- Recfactoring check_ipsec_traffic and check_ipsec to optimize execution (use a kind of cache insted of run ipsec command and parser result a lot of times)
 
 # Notes
  PR are always welcome
