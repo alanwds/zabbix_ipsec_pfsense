@@ -72,9 +72,12 @@ def parseConf():
                 right_tmp = [m.group(1) for l in conn_info for m in [reg_right.search(l)] if m]
                 rightsubnet_tmp = [m.group(1) for l in conn_info for m in [reg_rightsubnet.search(l)] if m]
 		if len(conn_tmp) > 0 :
-			rightsubnet_tmp = rightsubnet_tmp[0].lstrip() #remore spaces
-			rightsubnet_tmp = rightsubnet_tmp.split("/") #Split string to get only ip, without subnet mask)
-			descr = findDescr(rightsubnet_tmp[0],formatIkeId(conn_tmp))
+			if len(rightsubnet_tmp):
+				rightsubnet_tmp = rightsubnet_tmp[0].lstrip() #remore spaces
+				rightsubnet_tmp = rightsubnet_tmp.split("/") #Split string to get only ip, without subnet mask)
+				descr = findDescr(rightsubnet_tmp[0],formatIkeId(conn_tmp))
+                        else:
+				rightsubnet_tmp.append("Not found")
 		else:
 			descr = "Not found"
                 if conn_tmp and left_tmp and right_tmp:
