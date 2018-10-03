@@ -16,7 +16,7 @@ This template is used for monitoring IPSEC tunnels on PFSense using zabbix.
 
 # How it works
 
-The template queries zabbix-ipsec.py for tunnels ids (conXXXX). After that, the items prototipes are created consuming check_ipsec.sh script. The script check_ipsec_traffic is used to collect traffic about the tunnel. There are also a grafana dashboard if you want (grafana_ipsec_dashboard.json).
+The template queries zabbix-ipsec.py for tunnels ids (conXXXX). After that, the items prototipes are created consuming check_ipsec.sh script. The script check_ipsec_traffic is used to collect traffic about the tunnel. There are also a grafana dashboard if you want https://grafana.com/dashboards/8008 (grafana_ipsec_dashboard.json).
 
 ### Installation
 
