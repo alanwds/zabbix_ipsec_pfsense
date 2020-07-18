@@ -36,7 +36,7 @@ test_tunnel() {
 	tmp=$?
 	#If tunnel exists
 	if [ $tmp -eq 0 ]; then
-		ipsec statusall | grep -e "$CONN" | grep -e "rekeying" > /dev/null 2>&1
+		ipsec statusall | grep -e "$CONN" | grep -i "rekeying" > /dev/null 2>&1
 		if [ $? -eq 0 ]; then
 			ipsec statusall | grep -e "$CONN" | grep -v "rekeying" | grep -E "$IPV4_REGEX" > /dev/null 2>&1
 
