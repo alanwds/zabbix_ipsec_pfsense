@@ -17,30 +17,30 @@ root = tree.getroot()
 #Function to find phase description by ikeid
 def findDescr(remoteid,ikeid):
 
-        #Check if the parameter was sent
-        if not remoteid:
-                return "Not found"
-
-        #create search string. We use the "..." after the search to return the parent element of the current element.
-        #The reason for that is the remoteid is a sub element of phase2 element 
-        search = "./ipsec/phase2/remoteid/[address='" + remoteid + "']..."
-
-        for tunnel in root.findall(search):
-                descr = tunnel.find('descr').text
-
-                #If we have only one result, we are talking about the correct tunnel
-                if len(root.findall(search)) == 1:
-                        return descr
-
-                #otherwise, if we have more than 1, we have to confirm the remoteid and the ikeid 
-                #Case the ikeIds are the same, we got it. Case not, we pass and wait for next interation
-                else:
-                        #Get the ikeid of this element
-                        ikeidElement = tunnel.find('ikeid').text
-                        if ikeidElement == ikeid:
-                                return descr
-
+    #Check if the parameter was sent
+    if not remoteid:
         return "Not found"
+
+    #create search string. We use the "..." after the search to return the parent element of the current element.
+    #The reason for that is the remoteid is a sub element of phase2 element 
+    search = "./ipsec/phase2/remoteid/[address='" + remoteid + "']..."
+
+    for tunnel in root.findall(search):
+        descr = tunnel.find('descr').text
+
+        #If we have only one result, we are talking about the correct tunnel
+        if len(root.findall(search)) == 1:
+            return descr
+
+        #otherwise, if we have more than 1, we have to confirm the remoteid and the ikeid 
+        #Case the ikeIds are the same, we got it. Case not, we pass and wait for next interation
+        else:
+            #Get the ikeid of this element
+            ikeidElement = tunnel.find('ikeid').text
+            if ikeidElement == ikeid:
+                return descr
+
+    return "Not found"
 
 #Function to set correct format on ikeId. Recives conIDXXX, return ID
 def formatIkeId(ikeid):
